@@ -1,0 +1,47 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.sociales {
+    margin:5rem 0;
+    display: flex;
+    
+    @include m.tablet { 
+        margin: 0;
+    }
+    &__enlace {
+
+        &::before {
+            content: '';
+            padding: 2rem;
+            display: inline-block; //para qeu este dentro del bloque
+        }
+        &[href*="facebook.com"]::before {  // *=  para que busque uno que contenga facebook.com
+            background-image: url(../img/icono_facebook.svg);
+        }
+        &[href*="twitter.com"]::before {  // *=  para que busque uno que contenga facebook.com
+            background-image: url(../img/icono_twitter.svg);
+        }
+        &[href*="instagram.com"]::before {  // *=  para que busque uno que contenga facebook.com
+            background-image: url(../img/icono_instagram.svg);
+        }
+        &[href*="pinterest.com"]::before {  // *=  para que busque uno que contenga facebook.com
+            background-image: url(../img/icono_pinterest.svg);
+        }
+        &[href*="youtube.com"]::before {  // *=  para que busque uno que contenga facebook.com
+            background-image: url(../img/icono_youtube.svg);
+        }
+        &[href*="tiktok.com"]::before {  // *=  para que busque uno que contenga facebook.com
+            background-image: url(../img/icono_tiktok.svg);
+        }
+    }
+    &__accesible {
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: 0;
+        border: 0;
+        display: block;
+    }
+}
